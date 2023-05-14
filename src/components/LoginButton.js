@@ -2,7 +2,7 @@ import React from "react";
 import { useWalletLogin } from "@lens-protocol/react-web";
 import { useAccount, useConnect, useDisconnect } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
-import style from "./Loggin.module.css";
+import style from "../style/Loggin.module.css";
 function LoginButton() {
   const {
     execute: login,

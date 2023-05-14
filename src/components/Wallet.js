@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Web3 from "web3";
 
-import style from "./Wallet.module.css";
+import style from "../style/Wallet.module.css";
 
 const networkId = 4; // Rinkeby network ID
 

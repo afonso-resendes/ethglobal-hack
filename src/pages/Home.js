@@ -1,7 +1,14 @@
 import React from "react";
-import LoginButton from "../components/LoginButton";
+
+import Dashbord from "./Dashbord";
+import Post from "./Post";
+import Loggin from "../components/Loggin";
+
+import style from "../style/Home.module.css";
+
 
 import { uploadJson } from "../components/upload";
+
 import {
   ContentFocus,
   ProfileOwnedByMe,
@@ -10,12 +17,7 @@ import {
   useCreatePost,
   useExploreProfiles,
 } from "@lens-protocol/react-web";
-import style from "../components/Home.module.css";
-import Sidebar from "../components/Sidebar";
-import Menu from "../components/Menu";
-import Posts from "../components/Posts";
 
-import Loggin from "../components/Loggin";
 async function upload(content) {
   const data = await uploadJson(content);
   return data;
@@ -32,6 +34,8 @@ const Home = () => {
 };
 
 function Compose({ publisher }) {
+  const [homeScreen, setHomeScreen] = React.useState(true);
+
   const {
     execute: create,
     error,
@@ -48,31 +52,10 @@ function Compose({ publisher }) {
   };
   if (wallet) {
     console.log(wallet);
+
     return (
-      /* { <div>
-        <LogoutButton />
-        <p>You are logged-in with {wallet.address}</p>
-        <button onClick={onSubmit}>save</button>
-      </div> }*/
       <div className={style.container}>
-        <div className={style.main}>
-          <div className={style.titles}>
-            <h1>SHARE YOUR KNOWLEDGE</h1>
-            <h4>And profit by helping others</h4>
-          </div>
-        </div>
-
-        <div className={style.menu}>
-          <Menu />
-        </div>
-
-        <div className={style.content}>
-          <Posts />
-        </div>
-
-        <div className={style.sidebar}>
-          <Sidebar />
-        </div>
+          {homeScreen ? <Dashbord setHomeScreen={setHomeScreen}/> : <Post setHomeScreen={setHomeScreen}/>}      
       </div>
     );
   }

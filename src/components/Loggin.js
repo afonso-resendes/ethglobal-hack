@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Loggin.module.css";
+import style from "../style/Loggin.module.css";
 import LoginButton from "./LoginButton";
 
 export default function Loggin() {

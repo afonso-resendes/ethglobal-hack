@@ -1,0 +1,56 @@
+.container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    width: 800px;
+    height: 600px;
+    border-radius: 20px;
+    background-color: #f2f2f2;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width: 400px;
+    padding: 20px;
+    border-radius: 5px;
+}
+  
+label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+  
+input, textarea {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+  
+button {
+    padding: 10px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+  
+button:hover {
+    background-color: #005ba1;
+}
+  
