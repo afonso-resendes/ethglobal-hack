@@ -8,7 +8,7 @@
     margin:0px;
 }
 
-button{
+.post{
     background-color: #3E72BF;
     color: white;
     font-size: 1.5em;
@@ -19,14 +19,13 @@ button{
     padding-block: 20px;
 }
 
-button:hover{
+.post:hover{
     background-color: #3A70B0;
 }
 
 .grid{
-    display: grid;
-    grid: 1fr 1fr/1fr 1fr;
-    gap:5px;
+    display: flex;
+    gap:10px;
     margin-top: 80px;
     width: 100%;
     box-sizing: border-box;
@@ -35,8 +34,21 @@ button:hover{
 
 
 .block{
-    color: white;
-    background-color: black;
+    border: white 2px solid;
     padding-bottom: 60px;
     border-radius: 10px;
+    text-align: center;
+}
+
+.block p{
+    margin: 5px;
+}
+
+.block h1{
+    margin:0px;
+    font-size: 400%;
+
+}
+
+.popular{
 }

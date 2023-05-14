@@ -2,14 +2,21 @@ ul {
     margin:10px;
     margin-left:0px;
     list-style: none;
-    font-size:0.9em;
+    font-size: 1.5em;
 }
   
 ul li {
-  margin-top:10px;
+  margin-top:20px;
   display: flex;
   flex-direction: row;
   align-items: left;
+  border-bottom: #FFF 3px solid;
+  
+}
+
+ul li:hover {
+  padding: 4px;
+  background-color: #333;
   
 }
   
