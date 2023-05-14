@@ -1,0 +1,54 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar *{
+    margin:0px;
+}
+
+.post{
+    background-color: #3E72BF;
+    color: white;
+    font-size: 1.5em;
+    border:#3E72BF 1px;
+    border-radius: 4px;
+    width: 100%;
+    margin-top:40px;
+    padding-block: 20px;
+}
+
+.post:hover{
+    background-color: #3A70B0;
+}
+
+.grid{
+    display: flex;
+    gap:10px;
+    margin-top: 80px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+
+.block{
+    border: white 2px solid;
+    padding-bottom: 60px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.block p{
+    margin: 5px;
+}
+
+.block h1{
+    margin:0px;
+    font-size: 400%;
+
+}
+
+.popular{
+}

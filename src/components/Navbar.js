@@ -17,9 +17,12 @@ export default function Navbar() {
     return (
       <nav className={style.navbar}>
         <h1 className={style.title}>SolvETH</h1>
+        <div>
+          <input type="text" className={style.search} placeholder="Search..."/>
+        </div>
         <div className={style.account}>
-          <Wallet className={style.balance} address={wallet.address} />
           <p>{wallet.address}</p>
+          <Wallet className={style.balance} address={wallet.address} />
           <LogoutButton />
         </div>
       </nav>
