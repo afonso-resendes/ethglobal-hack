@@ -1,52 +1,56 @@
 import React from "react";
-import { useExploreProfiles } from "@lens-protocol/react-web";
 import LoginButton from "../components/LoginButton";
-import { useActiveWallet } from "@lens-protocol/react-web";
 import LogoutButton from "../components/LogoutButton";
-/* import uploadJson from "../components/upload"; */
+import {uploadJson} from "../components/upload";
+import {
+  ContentFocus, ProfileOwnedByMe,useActiveWallet, useActiveProfile, useCreatePost, useExploreProfiles
+} from '@lens-protocol/react-web';
+
+async function upload(content) {
+  const data = await uploadJson(content)
+  return data
+}
 
 const Home = () => {
-  const { data: wallet, loading } = useActiveWallet();
+  const { data: publisher, loading, error: profileError } = useActiveProfile()
 
   if (loading) {
     return <p>Loading...</p>;
   }
 
+  return <Compose publisher={publisher} />
+};
+
+function Compose ({ publisher }) {
+  const { execute: create, error, isPending } = useCreatePost({ publisher, upload });
+  const { data: wallet, loading: walletLoading } = useActiveWallet();
+
+  const onSubmit = async () => {
+    await create({
+      content: "Hello World from app",
+      contentFocus: ContentFocus.TEXT,
+      locale: 'en',
+    });
+    
+  };
   if (wallet) {
     console.log(wallet);
     return (
       <div>
         <LogoutButton />
         <p>You are logged-in with {wallet.address}</p>
+        <button onClick={onSubmit}>save</button>
       </div>
     );
   }
 
-  const metadata = {
-    QuestionText: "What is the meaning of life?",
-    Deadline: new Date("2023-05-31"),
-    Bounty: 100.0,
-  };
-
-  /* function upload() {
-    uploadJson(metadata)
-      .then((url) => {
-        console.log("Metadata uploaded:", url);
-      })
-      .catch((error) => {
-        console.error("Failed to upload metadata:", error);
-      });
-  } */
-
   return (
     <div>
       <h1>Homes</h1>
-
       <LoginButton />
       <p>You are logged-out</p>
-      {/* <button onClick={() => upload()}>upload</button> */}
     </div>
   );
-};
+}
 
 export default Home;
