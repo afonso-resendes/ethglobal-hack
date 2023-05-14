@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, ethers } from "react";
 
 import style from "../style/Post.module.css";
 
