@@ -2,7 +2,7 @@ import React from "react";
 import { useWalletLogin } from "@lens-protocol/react-web";
 import { useAccount, useConnect, useDisconnect } from "wagmi";
 import { InjectedConnector } from "wagmi/connectors/injected";
-
+import style from "./Loggin.module.css";
 function LoginButton() {
   const {
     execute: login,
@@ -33,8 +33,12 @@ function LoginButton() {
   return (
     <div>
       {loginError && <p>{loginError}</p>}
-      <button disabled={isLoginPending} onClick={onLoginClick}>
-        Log in
+      <button
+        className={style.button}
+        disabled={isLoginPending}
+        onClick={onLoginClick}
+      >
+        Connect lens profile
       </button>
     </div>
   );
