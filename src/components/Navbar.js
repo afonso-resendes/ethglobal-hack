@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Navbar.module.css";
+import style from "../style/Navbar.module.css";
 import Wallet from "./Wallet";
 import LogoutButton from "../components/LogoutButton";
 
